@@ -11,8 +11,7 @@ Although this plugin has very limited use case it is also a learning experience 
 
 ## The progress
 
-I added several issues and a milestone to track what I want to cover for an initial release. Hope to clear those in a couple of weeks from now. The main issue with all tasks referenced: #1
-
+I added several issues and a milestone to track what I want to cover for an initial release. Hope to clear those in a couple of weeks from now. The main issue with all tasks referenced: [#1](https://github.com/netoholic/jquery-trim-multiselect/issues/1).
 
 ## License
 
