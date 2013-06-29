@@ -1,0 +1,27 @@
+{
+  "name": "jquery-trim-multiselect",
+  "title": "jQuery Trim Multiselect",
+  "description": "A micro jQuery plugin, trimming long strings in multiselect elements.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/netoholic/jquery-trim-multiselect",
+  "author": {
+    "name": "Boyan `netoholic` Yordanov",
+    "email": "specterbg@gmail.com",
+    "url": "https://github.com/netoholic"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/netoholic/jquery-trim-multiselect.git"
+  },
+  "bugs": "https://github.com/netoholic/jquery-trim-multiselect/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/netoholic/jquery-trim-multiselect/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}

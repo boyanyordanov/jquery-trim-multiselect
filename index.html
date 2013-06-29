@@ -7,228 +7,85 @@
     .container {
       margin-left: auto;
       margin-right: auto;
-      width: 960px;
+      width: 500px;
       text-align: center;
     }
     
     .multi {
-      height: 150px;
+      height: 200px;
       width: 200px;
+      margin-top: 20px;
+    }
+
+    code {
+      text-align: left;
+    }
+
+    pre {
+      margin-top: 0;
     }
   </style>
+  <!-- Hilghlight.js styles -->
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css">
 </head>
 <body>
   <div class="container">
-    <h1>jQuery Trim Multiselect</h1>
+    <h1>jQuery Trim Multiselect - Demo</h1>
+    
+    <p>Very simple demo of how the plugin works.</p>
+    <p>More demos and better design will be added in the near future.</p>
+    
+    <p style="text-align: left; margin-bottom: 0;">Default usage: </p>
+    <pre>
+      <code>
+        $(function(){
+          $('.multi').trimMultiSelect();
+        });
+      </code> 
+    </pre>
+  
     <select class="multi" multiple>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>The very first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option for you to choose</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>The very first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option for you to choose</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>The very first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option for you to choose</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>The very first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option for you to choose</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>The very first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option for you to choose</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>The very first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option for you to choose</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>The very first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option for you to choose</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>The very first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option for you to choose</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>The very first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option for you to choose</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>The very first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option for you to choose</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>first very very very long optioin</option>
-      <option>Option 4</option>
-      <option>Option 5</option>
-      <option>Some very long option</option>
-      <option>Option 7</option>
-      <option>Another exeptioanlly long option</option>
-      <option>Option 9</option>
-      <option>Option 10</option>
+      <option value="">Option 1</option>
+      <option value="">Option 2</option>
+      <option value="">Option 3</option>
+      <option value="">Option 4</option>
+      <option value="">Option 5</option>
+      <option value="">Very very very long option 1</option>
+      <option value="">Very very very long option 2</option>
+      <option value="">Very very very long option 3</option>
+      <option value="">Some other option 1</option>
+      <option value="">Some other option 2</option>
+      <option value="">1 Exeptionaly long option to prove that the plugin works correctly</option>
+      <option value="">Dummy option 1</option>
+      <option value="">Dummy option 2</option>
+      <option value="">Dummy option 3</option>
+      <option value="">2 Exeptionaly long option to prove that the plugin works correctly</option>
+      <option value="">Dummy option 1</option>
+      <option value="">Dummy option 2</option>
+      <option value="">Dummy option 3</option>
+      <option value="">3 Exeptionaly long option to prove that the plugin works correctly</option>
+      <option value="">Dummy option 1</option>
+      <option value="">Dummy option 2</option>
+      <option value="">Dummy option 3</option>
+      <option value="">4 Exeptionaly long option to prove that the plugin works correctly</option>
+      <option value="">Dummy option 1</option>
+      <option value="">Dummy option 2</option>
+      <option value="">Dummy option 3</option>
+      <option value="">5 Exeptionaly long option to prove that the plugin works correctly</option>
+      <option value="">Dummy option 1</option>
+      <option value="">Dummy option 2</option>
+      <option value="">Dummy option 3</option>
     </select>  
   </div>
   
-  <script src="http://code.jquery.com/jquery.min.js"></script>
-  <script src="jquery.trim-multiselect.js"></script>
+  <script src="libs/jquery/jquery.js"></script>
+  <script src="dist/jquery-trim-multiselect.js"></script>
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+
   <script>
     $(function(){
-      $('.multi').trimSelect();
+      $('.multi').trimMultiSelect();
+      hljs.initHighlightingOnLoad();
     });
   </script>
 </body>
