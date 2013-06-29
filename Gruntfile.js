@@ -58,16 +58,17 @@ module.exports = function(grunt) {
       },
     },
     bump: {
-      files: ['package.json', 'jquery-trim-multiselect.jquery.json'],
-      updateConfigs: [],
-      commit: true,
-      commitMessage: 'Release v${version}',
-      commitFiles: ['package.json', 'jquery-trim-multiselect.jquery.json'], // '-a' for all files
-      createTag: true,
-      tagName: 'v${version}',
-      tagMessage: 'Version ${version}',
-      push: true,
-      pushTo: 'origin'
+      options: {
+        files: ['package.json', 'jquery-trim-multiselect.jquery.json'],
+        commit: true,
+        commitMessage: 'Release v${version}',
+        commitFiles: ['package.json', 'jquery-trim-multiselect.jquery.json'], // '-a' for all files
+        createTag: true,
+        tagName: 'v${version}',
+        tagMessage: 'Version ${version}',
+        push: true,
+        pushTo: 'origin'
+      }
     },
     watch: {
       gruntfile: {

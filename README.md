@@ -14,13 +14,16 @@ Although this plugin has very limited use case it is also a learning experience 
 I added several issues and a milestone to track what I want to cover for an initial release. Hope to clear those in a couple of weeks from now. The main issue with all tasks referenced: [#1](https://github.com/netoholic/jquery-trim-multiselect/issues/1).
 
 ## Getting Started
+
 Download the [production version][min] or the [development version][max].
 
 [min]: https://raw.github.com/netoholic/jquery-trim-multiselect/master/dist/jquery-trim-multiselect.min.js
 [max]: https://raw.github.com/netoholic/jquery-trim-multiselect/master/dist/jquery-trim-multiselect.js
 
 ## Documentation
-	
+
+Check the annotated source [here](http://netoholic.github.io/jquery-trim-multiselect/docs/jquery-trim-multiselect.html).
+
 ### Basic Usage
 
 ```html
@@ -35,10 +38,25 @@ Download the [production version][min] or the [development version][max].
 ```
 
 ## Examples
-_(Coming soon)_
+
+See demo of the basic usage [here](http://netoholic.github.io/jquery-trim-multiselect/).
 
 ## Release History
-_(Nothing yet)_
+
+***v0.0.3***
+- Cleaned up the project folder
+- Fixed grunt configuration
+- And mainly used to test grunt-bump configuration
+
+***v0.0.2***
+- Better project structure
+- Grunt automation 
+- Initial functionality - slowest but most accurate method
+- Demo and github page
+- Docs generated with [docco](http://jashkenas.github.io/docco/)
+
+***v0.0.1***
+- Initial release
 
 ## License
 
