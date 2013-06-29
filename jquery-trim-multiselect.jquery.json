@@ -17,7 +17,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/netoholic/jquery-trim-multiselect/blob/master/LICENSE-MIT"
+      "url": "https://github.com/netoholic/jquery-trim-multiselect/blob/master/LICENSE"
     }
   ],
   "dependencies": {

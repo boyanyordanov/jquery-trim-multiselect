@@ -57,6 +57,18 @@ module.exports = function(grunt) {
         src: ['test/**/*.js']
       },
     },
+    bump: {
+      files: ['package.json', 'jquery-trim-multiselect.jquery.json'],
+      updateConfigs: [],
+      commit: true,
+      commitMessage: 'Release v${version}',
+      commitFiles: ['package.json', 'jquery-trim-multiselect.jquery.json'], // '-a' for all files
+      createTag: true,
+      tagName: 'v${version}',
+      tagMessage: 'Version ${version}',
+      push: true,
+      pushTo: 'origin'
+    },
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -70,7 +82,7 @@ module.exports = function(grunt) {
         files: '<%= jshint.test.src %>',
         tasks: ['jshint:test', 'qunit']
       },
-    },
+    }
   });
 
   // These plugins provide necessary tasks.
@@ -80,6 +92,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-bump');
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'concat', 'uglify']);

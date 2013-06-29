@@ -1,6 +1,10 @@
 {
-  "name": "jquery-plugin",
+  "name": "jquery-trim-multiselect",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/netoholic/jquery-trim-multiselect.git"
+  },
   "engines": {
     "node": ">= 0.8.0"
   },
@@ -14,6 +18,7 @@
     "grunt-contrib-uglify": "~0.1.1",
     "grunt-contrib-watch": "~0.2.0",
     "grunt-contrib-clean": "~0.4.0",
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "grunt-bump": "0.0.6"
   }
 }
