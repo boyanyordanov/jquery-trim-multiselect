@@ -2,7 +2,7 @@
   "name": "jquery-trim-multiselect",
   "title": "jQuery Trim Multiselect",
   "description": "A micro jQuery plugin, trimming long strings in multiselect elements.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://github.com/netoholic/jquery-trim-multiselect",
   "author": {
     "name": "Boyan `netoholic` Yordanov",
