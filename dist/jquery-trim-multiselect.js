@@ -2,59 +2,47 @@
 * https://github.com/netoholic/jquery-trim-multiselect
 * Copyright (c) 2013 Boyan `netoholic` Yordanov; Licensed MIT */
 ;(function( $, window, document, undefined ) {
-  
+
   $.fn.trimMultiSelect = function () {    
+    return this.each(function() {
+      var $el = $(this);
 
-    // Get the width of the select element
-    var selectWidth = this.width() - 30;
-  
-    // If not presnet include the testing element
-    if ( ! $('#trimSelectTestEl').length ) {
-      $(document.body).append('<div style="display: inline; position: absolute; top: -9999em;" class="trimSelectTestEl"></div>');
-    }
+      // Get the width of the select element
+      var selectWidth = $el.width();
     
-    // Get a reference to the testing element
-    var testEl = $('.trimSelectTestEl');
-    var currTrimBarier;
-
-    // Loop trough the option elements in the select
-    this.find('option').each(function() {
-      var testOpt = $(this);
+      // If not presnet include the testing element
+      if ( ! $('#trimSelectTestEl').length ) {
+        $(document.body).append('<div style="display: inline; position: absolute; top: -9999em; padding: 0; margin: 0;" class="trimSelectTestEl"></div>');
+      }
       
-      // Get the length of the current string
-      testEl.text( testOpt.text() );
-      var len = testEl.text().length;
-      
-      if ( !currTrimBarier ) {
+      // Get a reference to the testing element
+      var testEl = $('.trimSelectTestEl');
 
+      // Loop trough the option elements in the select
+      $el.find('option').each(function() {
+        var testOpt = $(this);
+        
+        // Get the length of the current string
+        testEl.text( testOpt.text() );
+        var len = testEl.text().length;
+        
         // If the width of the testing element is bigger than that of the select - trim it
         if ( testEl.width() > selectWidth ) {
           
           // Find the necessary length to fit in the select
           while( testEl.width() > selectWidth ) {
-            testEl.text( testEl.text().substr(0, len) );
+            testEl.text( testEl.text().substr(0, len) + '...' );
             len--;
           }
-          
-          currTrimBarier = len;
 
           // Add the full text as title to show on hover
           testOpt.attr( 'title', testOpt.text() );
           // Replace the element's text with the trimmed text + elipsis
-          testOpt.text('').text( testEl.text() + '...');
+          testOpt.text('').text( testEl.text() );
         }
-      } else {
-        if ( testEl.width() > selectWidth ) {
-          // Add the full text as title to show on hover
-          testOpt.attr( 'title', testOpt.text() );
-          // Replace the element's text with the trimmed text + elipsis
-          testOpt.text('').text( testEl.text().substr(0, currTrimBarier) + '...');
-        }
-      }
+      });
+      
+      testEl.remove();
     });
-    
-    testEl.remove();
-
-    return this;
   };
 })( jQuery, window, document );

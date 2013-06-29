@@ -76,7 +76,7 @@ module.exports = function(grunt) {
       },
       src: {
         files: '<%= jshint.src.src %>',
-        tasks: ['jshint:src', 'qunit']
+        tasks: ['jshint:src', 'qunit', 'clean', 'concat', 'uglify']
       },
       test: {
         files: '<%= jshint.test.src %>',
@@ -96,5 +96,6 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'concat', 'uglify']);
+  grunt.registerTask('dev', ['qunit', 'clean', 'concat', 'uglify']);
 
 };
