@@ -1,4 +1,4 @@
-/*! jQuery Trim Multiselect - v0.0.1 - 2013-06-29
+/*! jQuery Trim Multiselect - v0.0.4 - 2013-07-02
 * https://github.com/netoholic/jquery-trim-multiselect
 * Copyright (c) 2013 Boyan `netoholic` Yordanov; Licensed MIT */
 ;(function( $, window, document, undefined ) {
