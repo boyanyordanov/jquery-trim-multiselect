@@ -43,7 +43,7 @@ See demo of the basic usage [here](http://netoholic.github.io/jquery-trim-multis
 
 ## Release History
 
-***v0.0.3***
+***v0.0.3 & v0.0.4***
 - Cleaned up the project folder
 - Fixed grunt configuration
 - And mainly used to test grunt-bump configuration
