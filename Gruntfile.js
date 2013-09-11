@@ -61,7 +61,7 @@ module.exports = function(grunt) {
       options: {
         files: ['package.json', 'jquery-trim-multiselect.jquery.json', 'bower.json'],
         commit: true,
-        commitFiles: ['package.json', 'jquery-trim-multiselect.jquery.json'], // '-a' for all files
+        commitFiles: ['package.json', 'jquery-trim-multiselect.jquery.json', 'bower.json'], // '-a' for all files
         createTag: true,
         push: true,
         pushTo: 'origin'
