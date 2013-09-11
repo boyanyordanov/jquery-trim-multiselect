@@ -9,10 +9,6 @@ A micro jQuery plugin, trimming long strings in multiselect elements. The proble
 
 Although this plugin has very limited use case it is also a learning experience for me. So any help, criticism and feedback in general is most welcome.
 
-## The progress
-
-I added several issues and a milestone to track what I want to cover for an initial release. Hope to clear those in a couple of weeks from now. The main issue with all tasks referenced: [#1](https://github.com/netoholic/jquery-trim-multiselect/issues/1).
-
 ## Getting Started
 
 Download the [production version][min] or the [development version][max].
@@ -24,7 +20,11 @@ Download the [production version][min] or the [development version][max].
 
 Check the annotated source [here](http://netoholic.github.io/jquery-trim-multiselect/docs/jquery-trim-multiselect.html).
 
-### Basic Usage
+## Installation
+
+``` bower install jquery-trim-multiselect ```
+
+## Basic Usage
 
 ```html
 <script src="jquery.js"></script>
@@ -42,6 +42,10 @@ Check the annotated source [here](http://netoholic.github.io/jquery-trim-multise
 See demo of the basic usage [here](http://netoholic.github.io/jquery-trim-multiselect/).
 
 ## Release History
+
+***v0.1.1***
+- Implemented new algorithm which is a lot faster
+- Option to install via bower
 
 ***v0.0.3 & v0.0.4***
 - Cleaned up the project folder

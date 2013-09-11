@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>jquery-trim-multiselect.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="public/stylesheets/normalize.css" />
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="page">
+
+      <div class="header">
+        
+          <h1>jquery-trim-multiselect.js</h1>
+        
+
+        
+      </div>
+
+      
+        
+        
+        
+          <div class='highlight'><pre><span class="comment">/*
+ * jquery-trim-multiselect
+ *
+ * The plugin finds options text, which does not fit inside a fixed width multiselect and trims them down.
+ * 
+ * https://github.com/netoholic/jquery-trim-multiselect
+ *
+ * Copyright (c) 2013 Boyan `netoholic` Yordanov
+ * Licensed under the MIT license.
+ */</span>
+
+;(<span class="keyword">function</span>( $, window, document, <span class="literal">undefined</span> ) {
+  <span class="comment">/**
+   * The heart of the plugin.
+   * Module object used to better organize the code
+   * and reveal only api needed for the plugin.
+   * @return {object} The public interface of the module
+   */</span>
+  <span class="keyword">var</span> trimUtils = (<span class="keyword">function</span>() {</pre></div>
+        
+      
+        
+        <p>Initialize variables used troughtout the object</p>
+
+        
+          <div class='highlight'><pre>     
+    <span class="comment">/** @type {String}  HTML string for the element used for testing*/</span>
+    <span class="keyword">var</span> testElHTML = <span class="string">'&lt;div style="display: inline; position: absolute; top: -9999em; padding: 0; margin: 0;" id="trimSelectTestEl"&gt;&lt;/div&gt;'</span>;
+    
+    <span class="comment">/** @type {jQuery object}  reference to the testing element */</span>
+    <span class="keyword">var</span> testEl = <span class="literal">null</span>;
+
+    <span class="comment">/** @type {jQuery object}  reference to the select element */</span>
+    <span class="keyword">var</span> selectEl = <span class="literal">null</span>;
+
+    <span class="comment">/** @type {number} The width of the select element */</span>
+    <span class="keyword">var</span> selectWidth = <span class="literal">null</span>;
+
+    <span class="comment">/**
+     * Initialization of the plugin.
+     * Creates the test element if it's not present,
+     * then sets values to the variables shared by all functions.
+     * @param  {jQuery object} el Referene to the select element
+     */</span>
+    <span class="function"><span class="keyword">function</span> <span class="title">initialize</span><span class="params">(el)</span> {</span>
+      createTestEl();
+
+      selectEl = el;
+      selectWidth = el.width() - <span class="number">15</span>;
+
+      testEl = $(<span class="string">'#trimSelectTestEl'</span>);
+    }
+
+    <span class="comment">/**
+     * Removes the testing element.
+     * To be used when the plugin execution is complete.
+     */</span>
+    <span class="function"><span class="keyword">function</span> <span class="title">clean</span><span class="params">()</span> {</span>
+      testEl.remove();
+    }
+
+    <span class="comment">/**
+     * Checks if the testing element is present
+     * and creates it if it's not.
+     */</span>
+    <span class="function"><span class="keyword">function</span> <span class="title">createTestEl</span><span class="params">()</span> {</span></pre></div>
+        
+      
+        
+        <p>If not presnet include the testing element</p>
+
+        
+          <div class='highlight'><pre>      <span class="keyword">if</span> ( ! $(<span class="string">'#trimSelectTestEl'</span>).length ) {
+        $(document.body).append(testElHTML);
+      }
+    }
+
+    <span class="comment">/**
+     * Trims a given string down to a length
+     * that fits inside the width of the select element.
+     *
+     * The function uses recursion to make the calculation faster:
+     * 1. Checks if the text fits
+     * 1.1 If not
+     *   1. Splits it in half
+     *   2. Sets value to the removed parameter
+     *   3. Sets the text in the testing element to the new value
+     *   4. Calls itself recursively
+     * 1.2 If it fits
+     *   1. Tries to find optimal width for the testing element 
+     *      and length for the string
+     *   2. Performs a check whether the width is optimal
+     *   2.1 If it's not
+     *     1. Extends the string 
+     *        by adding back half of the removed part in the previos call  
+     *     2. Sets value for the removed parameter
+     *     3. Sets the text in the testing element to the new value
+     *     4. Calls itself recursively
+     *   2.2 If it is returns the trimmed string
+     *   
+     * @param  {String} textValue The text to be trimmed
+     * @param  {String} removed   Text being removed from the string
+     *                            ( for use in the recursion )
+     * @return {String}           The trimmed string
+     */</span>
+    <span class="function"><span class="keyword">function</span> <span class="title">trimString</span><span class="params">(textValue, removed)</span> {</span>  
+      <span class="comment">/** @type {String} Holds the new value for each call */</span>
+      <span class="keyword">var</span> newTextValue = <span class="string">''</span>;</pre></div>
+        
+      
+        
+        <p>Trims spaces around the strings</p>
+
+        
+          <div class='highlight'><pre>      textValue = $.trim(textValue);
+      removed = $.trim(removed);</pre></div>
+        
+      
+        
+        <p>Check if the text will fit</p>
+
+        
+          <div class='highlight'><pre>      <span class="keyword">if</span> ( testEl.width() &gt; selectWidth ) {</pre></div>
+        
+      
+        
+        <p>Set the new value</p>
+
+        
+          <div class='highlight'><pre>        newTextValue = textValue.substr(<span class="number">0</span>, textValue.length/<span class="number">2</span>);
+        
+        testEl.text( newTextValue );</pre></div>
+        
+      
+        
+        <p>Prepare &#39;removed&#39; param for the next call</p>
+
+        
+          <div class='highlight'><pre>        removed = textValue.substr(textValue.length/<span class="number">2</span>);</pre></div>
+        
+      
+        
+        <p>Call recursively and return the result</p>
+
+        
+          <div class='highlight'><pre>        <span class="keyword">return</span> trimString(newTextValue, removed);
+      } <span class="keyword">else</span> {  
+        <span class="keyword">var</span> optimalWidth = <span class="number">0.2</span> * selectWidth;
+
+        <span class="keyword">if</span> ( ( selectWidth - testEl.width() ) &gt; optimalWidth ) {
+          newTextValue = textValue + removed.substr( <span class="number">0</span>, removed.length/<span class="number">2</span> );
+          testEl.text( textValue );</pre></div>
+        
+      
+        
+        <p>Prepare &#39;removed&#39; param for the next call</p>
+
+        
+          <div class='highlight'><pre>          removed = removed.substr( removed.length/<span class="number">2</span> );</pre></div>
+        
+      
+        
+        <p>Call recursively and return the result</p>
+
+        
+          <div class='highlight'><pre>          <span class="keyword">return</span> trimString(newTextValue, removed);
+        } <span class="keyword">else</span> {</pre></div>
+        
+      
+        
+        <p>Return the trimmed value</p>
+
+        
+          <div class='highlight'><pre>          <span class="keyword">return</span> textValue;
+        }
+      }
+    }
+
+    <span class="comment">/**
+     * Performs additional tasks before and after trimming the string value.
+     *
+     * Sets the testEl text initialy.
+     * Checks if the text needs trimming and does nothing if it doesn't. 
+     * Sets the full text of the ption as title attribute. 
+     * Calls 'trimString' to get the trim value. 
+     * Appends ellipsis to its end. 
+     * Replaces the text of the option element with the trimmed value
+     * 
+     * @param  {jQuery object} optEl Reference to the option element
+     */</span>
+    <span class="function"><span class="keyword">function</span> <span class="title">trim</span><span class="params">(optEl)</span> {</span>
+      testEl.text(optEl.text());
+
+      <span class="keyword">if</span> (testEl.width() &gt; selectWidth) {
+        optEl.attr(<span class="string">'title'</span>, optEl.text());
+
+        <span class="keyword">var</span> trimmedText = trimString(optEl.text(), <span class="string">''</span>);
+
+        optEl.text(trimmedText + <span class="string">'...'</span>);
+      }
+    }</pre></div>
+        
+      
+        
+        <p>Return the publicly available functions</p>
+
+        
+          <div class='highlight'><pre>    <span class="keyword">return</span> {
+      trim: trim,
+      initialize: initialize,
+      clean: clean
+    };
+  })();
+
+  <span class="comment">/**
+   * The actual plugin. 
+   * Uses the trimUtils module to perform the trimming on all
+   * elements it's applied to.
+   * 
+   * @return {jQuery object}  Returns the object to preserve chaining
+   */</span>
+  $.fn.trimMultiSelect = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>    
+    <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="keyword">function</span>() {
+      <span class="comment">/** @type {jQuery object} Reference to the element we are working with. */</span>
+      <span class="keyword">var</span> $el = $(<span class="keyword">this</span>);</pre></div>
+        
+      
+        
+        <p>Initialize the &#39;trimUtils&#39; module</p>
+
+        
+          <div class='highlight'><pre>      trimUtils.initialize($el);</pre></div>
+        
+      
+        
+        <p>Loop trough the option elements in the select</p>
+
+        
+          <div class='highlight'><pre>      $el.find(<span class="string">'option'</span>).each(<span class="keyword">function</span>() {
+        <span class="comment">/** @type {jQuery object} Reference to the current option element */</span>
+        <span class="keyword">var</span> testOpt = $(<span class="keyword">this</span>);</pre></div>
+        
+      
+        
+        <p>Trim the option text if it&#39;s too long</p>
+
+        
+          <div class='highlight'><pre>        trimUtils.trim(testOpt);
+      });</pre></div>
+        
+      
+        
+        <p>Clean after all options are trimmed.</p>
+
+        
+          <div class='highlight'><pre>      trimUtils.clean();
+    });
+  };
+})( jQuery, window, document );</pre></div>
+        
+      
+      <div class="fleur">h</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "jquery-trim-multiselect",
+  "version": "0.1.1",
+  "main": "dist/jquery-trim-multiselect.min.js",
+  "dependencies": {
+    "jquery": "1.10.*"
+  },
+  "devDependencies": {
+    "qunit": "1.12.0",
+    "blanket": "*",
+    "prismjs": "*"
+  }
+}

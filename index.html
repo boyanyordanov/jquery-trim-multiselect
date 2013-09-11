@@ -26,7 +26,7 @@
     }
   </style>
   <!-- Hilghlight.js styles -->
-  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css">
+  <link rel="stylesheet" href="libs/prismjs/prism.css">
 </head>
 <body>
   <div class="container">
@@ -38,7 +38,7 @@
     
     <p style="text-align: left; margin-bottom: 0;">Default usage: </p>
     <pre>
-      <code>
+      <code class="language-javascript">
         $(function(){
           $('.multi').trimMultiSelect();
         });
@@ -79,14 +79,13 @@
     </select>  
   </div>
   
-  <script src="libs/jquery/jquery.js"></script>
-  <script src="dist/jquery-trim-multiselect.js"></script>
-  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script src="libs/jquery/jquery.min.js"></script>
+  <script src="dist/jquery-trim-multiselect.min.js"></script>
+  <script src="libs/prismjs/prism.js"></script>
 
   <script>
     $(function(){
       $('.multi').trimMultiSelect();
-      hljs.initHighlightingOnLoad();
     });
   </script>
 </body>
